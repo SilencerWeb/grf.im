@@ -1,23 +1,7 @@
-// @flow
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 
-type props = {
-  className: string,
-  icon: {
-    id: string,
-   node: {
-     viewBox: {
-       animVal: {
-         width: number,
-         height: number
-       }
-     }
-   }
-  }
-};
-
-function _Icon(props: props) {
+function _Icon(props) {
   return (
     <svg className={ props.className }>
       <use xlinkHref={ '#' + props.icon.id }/>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>ic-exit-to-app-24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="nav-static" transform="translate(-273.000000, -564.000000)">
+            <g id="Group" transform="translate(125.000000, 150.000000)">
+                <g id="Group-2">
+                    <g id="Group-4" transform="translate(107.000000, 199.000000)">
+                        <g id="Group-7" transform="translate(0.000000, 210.000000)">
+                            <g id="ic-exit-to-app-24px" transform="translate(40.000000, 4.000000)">
+                                <polygon id="Shape" points="0 0 14 0 14 14 0 14"></polygon>
+                                <path d="M11.0833333,1.75 L2.91666667,1.75 C2.26916667,1.75 1.75,2.275 1.75,2.91666667 L1.75,5.25 L2.91666667,5.25 L2.91666667,2.91666667 L11.0833333,2.91666667 L11.0833333,11.0833333 L2.91666667,11.0833333 L2.91666667,8.75 L1.75,8.75 L1.75,11.0833333 C1.75,11.725 2.26916667,12.25 2.91666667,12.25 L11.0833333,12.25 C11.725,12.25 12.25,11.725 12.25,11.0833333 L12.25,2.91666667 C12.25,2.275 11.725,1.75 11.0833333,1.75 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+                                <polygon id="Path" fill="#00EA9B" points="5.88583333 9.09416667 6.70833333 9.91666667 9.625 7 6.70833333 4.08333333 5.88583333 4.90583333 7.39083333 6.41666667 1.75 6.41666667 1.75 7.58333333 7.39083333 7.58333333"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
