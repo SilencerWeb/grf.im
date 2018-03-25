@@ -12,6 +12,7 @@ body {
   position: relative;
   min-width: 320px;
   font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
   background-color: #54a1ff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

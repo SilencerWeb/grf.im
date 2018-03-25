@@ -1,7 +1,10 @@
+// @flow
 import * as React from 'react';
 import styled from 'styled-components';
 
-type props = {};
+type props = {
+  children: React.Node
+};
 
 const Wrapper = styled.div`
   padding-right: 20px;
