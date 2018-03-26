@@ -1,9 +1,20 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { injectGlobal } from 'styled-components';
 
-import { App } from 'containers/app/app';
+import { Header } from 'ui/molecules';
 
-import 'normalize.css/normalize.css'
-import 'assets/styles/main.css'
+import { globalStyles } from 'ui/theme';
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+import nomralize from 'normalize.css/normalize.css';
+
+injectGlobal`${nomralize} ${globalStyles}`;
+
+ReactDOM.render(
+  (
+    <div>
+      <Header/>
+    </div>
+  ),
+  document.getElementById('root'),
+);

@@ -1,25 +1,18 @@
-// @flow
-import * as React from 'react';
 import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 
-import { media } from 'helpers/helpers';
+import { media } from 'ui/mixins';
 
-import { transition } from 'constants/constants';
+import { color, transition } from 'ui/theme';
 
-type props = {
-  children: React.Node,
-  blue?: boolean,
-  adaptiveWide?: boolean
-};
-
-const Wrapper = styled.button`
+export const Button = styled.button`
   display: inline-block;
   vertical-align: top;
   font-size: 14px;
   font-weight: 900;
-  color: #ffffff;
+  color: ${color.textPrimary};
   background-color: #00ea9b;
-  border: solid 1px transparent;
+  border: 1px solid transparent;
   border-radius: 2px;
   padding-top: 0.5px;
   padding-right: 13.5px;
@@ -30,13 +23,13 @@ const Wrapper = styled.button`
   transition: ${transition};
   
   &:hover {
-    border-color: #ffffff;
+    border-color: ${color.secondary};
   }
   
-  ${props => props.blue && css`
+  ${p => p.primary && css`
     font-size: 20px;
     font-weight: 400;
-    background-color: #54a1ff;
+    background-color: ${color.primary};
     border-radius: 5px;
     padding-top: 23px;
     padding-right: 39.5px;
@@ -44,7 +37,7 @@ const Wrapper = styled.button`
     padding-left: 39.5px;
   `}
   
-  ${props => props.adaptiveWide && css`
+  ${p => p.adaptiveWide && css`
     ${media.down.lg`
       width: 100%;
       font-size: 18px;
@@ -62,12 +55,12 @@ const Wrapper = styled.button`
   `}
 `;
 
-function Button(props: props) {
-  return (
-    <Wrapper blue={ props.blue } adaptiveWide={ props.adaptiveWide }>
-      { props.children }
-    </Wrapper>
-  );
-}
+Button.propTypes = {
+  primary: PropTypes.bool,
+  adaptiveWide: PropTypes.bool,
+};
 
-export { Button };
+Button.defaultProps = {
+  primary: false,
+  adaptiveWide: false,
+};

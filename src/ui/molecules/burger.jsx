@@ -1,23 +1,18 @@
-// @flow
 import * as React from 'react';
 import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 
-import { media } from 'helpers/helpers';
+import { media } from 'ui/mixins';
 
-import { transition } from 'constants/constants';
-
-type props = {
-  blue?: boolean,
-  smHidden?: boolean
-};
+import { color, transition } from 'ui/theme';
 
 const Line = styled.span`
   display: inline-block;
   vertical-align: top;
   width: 100%;
   height: 4px;
-  background-color: ${props => props.blue ? '#54a1ff' : '#ffffff'};
-  border: 1px solid ${props => props.blue ? '#54a1ff' : '#ffffff'};
+  background-color: ${p => p.blue ? color.primary : color.secondary};
+  border: 1px solid ${p => p.blue ? color.primary : color.secondary};
   transition: ${transition};
   
   ${media.down.sm`
@@ -55,7 +50,7 @@ const Button = styled.button`
     background-color: transparent;
   }
   
-  ${props => props.smHidden && css`
+  ${p => p.smHidden && css`
     ${media.down.sm`
       display: none;
     `}
@@ -66,7 +61,7 @@ const Button = styled.button`
   `}
 `;
 
-function Burger(props: props) {
+export const Burger = (props) => {
   return (
     <Button smHidden={ props.smHidden }>
       <Line blue={ props.blue }/>
@@ -74,6 +69,14 @@ function Burger(props: props) {
       <Line blue={ props.blue }/>
     </Button>
   );
-}
+};
 
-export { Burger };
+Burger.propTypes = {
+  smHidden: PropTypes.bool,
+  blue: PropTypes.bool,
+};
+
+Burger.defaultProps = {
+  smHidden: false,
+  blue: false,
+};

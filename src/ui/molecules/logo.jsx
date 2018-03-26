@@ -1,26 +1,19 @@
-// @flow
 import * as React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-import { Icon } from 'components/icon/icon';
+import { Icon } from 'ui/molecules';
 
-import { media } from 'helpers/helpers';
+import { media } from 'ui/mixins';
 
-import { transition } from 'constants/constants';
+import { color, transition } from 'ui/theme';
 
-import logoIcon from 'assets/icons/logo-icon.svg';
-import logoText from 'assets/icons/logo-text.svg';
-
-type props = {
-  className?: string,
-  blue?: boolean,
-  noIcon?: boolean
-};
+import { logoIcon, logoText } from 'ui/outlines';
 
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  color: ${props => props.blue ? '#54a1ff' : '#ffffff'};
+  color: ${p => p.primary ? color.primary : color.secondary};
   
   &:hover {
   
@@ -30,7 +23,7 @@ const Wrapper = styled.div`
   }
   
   svg {
-    stroke: ${props => props.blue ? '#54a1ff' : '#ffffff'};
+    stroke: ${p => p.primary ? color.primary : color.secondary};
     transition: ${transition};
   }
 `;
@@ -75,12 +68,12 @@ const TextWrapper = styled.div`
   }
 `;
 
-function Logo(props: props) {
+export const Logo = (props) => {
   const icon = !props.noIcon ? <Icon icon={ logoIcon }/> : null;
   const text = <Icon icon={ logoText }/>;
 
   return (
-    <Wrapper blue={ props.blue } className={ props.className }>
+    <Wrapper primary={ props.primary } className={ props.className }>
       <IconWrapper>
         { icon }
       </IconWrapper>
@@ -91,4 +84,14 @@ function Logo(props: props) {
   );
 };
 
-export { Logo };
+Logo.propTypes = {
+  className: PropTypes.string,
+  primary: PropTypes.bool,
+  noIcon: PropTypes.bool,
+};
+
+Logo.defaultProps = {
+  className: null,
+  primary: false,
+  noIcon: false,
+};

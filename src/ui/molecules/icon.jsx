@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 
 function _Icon(props) {
   return (
@@ -21,3 +22,11 @@ export const Icon = styled(_Icon)`
   
   fill: currentColor;
 `;
+
+Icon.propTypes = {
+  className: PropTypes.string,
+};
+
+Icon.defaultProps = {
+  className: null,
+};
