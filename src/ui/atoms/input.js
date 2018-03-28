@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 import { placeholder } from 'ui/mixins';
 
-import { color, transition } from 'ui/theme';
+import { font, color, transition } from 'ui/theme';
 
 export const Input = styled.input`
   width: 100%;
-  font-size: 18px;
+  font-size: ${font.size.base};
   color: ${color.textPrimary};
   background-color: transparent;
   border: none;
@@ -22,10 +22,30 @@ export const Input = styled.input`
   }
   
   ${placeholder`
+    font-size: ${font.size.base};
     color: ${color.textPrimary};
+  `}
+  
+  ${p => p.white && css`
+    color: ${color.primary};
+    background-color: ${color.secondary};
+    border: none;
+    border-radius: 2px;
+    padding-top: 13px;
+    padding-right: 10px;
+    padding-bottom: 13px;
+    padding-left: 10px;
+    
+    ${placeholder`
+      color: ${color.primary};
+    `}
   `}
 `;
 
-Input.propTypes = {};
+Input.propTypes = {
+  white: PropTypes.bool,
+};
 
-Input.defaultProps = {};
+Input.defaultProps = {
+  white: false,
+};

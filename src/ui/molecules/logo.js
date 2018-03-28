@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { Icon } from 'ui/molecules';
+import { Icon } from 'ui/atoms';
 
 import { media } from 'ui/mixins';
 

@@ -1,7 +1,12 @@
 const css = String.raw;
 
 export const font = {
-  primary: 'Montserrat, sans-serif',
+  family: {
+    primary: 'Montserrat, sans-serif',
+  },
+  size: {
+    base: '18px'
+  }
 };
 
 export const color = {
@@ -28,7 +33,8 @@ export const globalStyles = css`
   body {
     position: relative;
     min-width: 320px;
-    font-family: ${font.primary};
+    font-family: ${font.family.primary};
+    font-size: ${font.size.base};
     color: ${color.textPrimary};
     background-color: ${color.primary};
     -webkit-font-smoothing: antialiased;

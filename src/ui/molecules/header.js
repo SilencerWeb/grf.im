@@ -1,9 +1,15 @@
+// @flow
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
 import { Container } from 'ui/atoms';
 import { Logo, Burger } from 'ui/molecules';
+
+type props = {
+  className?: string,
+  primary?: boolean
+};
 
 const Wrapper = styled.header`
   padding-top: 20px;
@@ -16,9 +22,9 @@ const Inner = styled.div`
   align-items: center;
 `;
 
-export const Header = (props) => {
+export const Header = (props: props) => {
   return (
-    <Wrapper>
+    <Wrapper className={ props.className }>
       <Container>
         <Inner>
           <a href="">
@@ -29,12 +35,4 @@ export const Header = (props) => {
       </Container>
     </Wrapper>
   );
-};
-
-Header.propTypes = {
-  blue: PropTypes.bool,
-};
-
-Header.defaultProps = {
-  blue: false,
 };

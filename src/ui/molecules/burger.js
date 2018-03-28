@@ -63,7 +63,7 @@ const Button = styled.button`
 
 export const Burger = (props) => {
   return (
-    <Button smHidden={ props.smHidden }>
+    <Button className={ props.className } smHidden={ props.smHidden }>
       <Line blue={ props.blue }/>
       <Line blue={ props.blue }/>
       <Line blue={ props.blue }/>
@@ -72,11 +72,13 @@ export const Burger = (props) => {
 };
 
 Burger.propTypes = {
+  className: PropTypes.string,
   smHidden: PropTypes.bool,
   blue: PropTypes.bool,
 };
 
 Burger.defaultProps = {
+  className: null,
   smHidden: false,
   blue: false,
 };

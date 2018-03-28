@@ -1,0 +1,1 @@
+export { UrlShortenerForm } from 'ui/organisms/url-shortener-form';

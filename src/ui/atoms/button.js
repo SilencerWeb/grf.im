@@ -37,17 +37,15 @@ export const Button = styled.button`
     padding-left: 39.5px;
   `}
   
-  ${p => p.adaptiveWide && css`
-    ${media.down.lg`
-      width: 100%;
-      font-size: 18px;
-      text-align: center;
-      text-transform: uppercase;
-      padding-top: 13px;
-      padding-right: 13px;
-      padding-bottom: 13px;
-      padding-left: 13px;
-    `}
+  ${p => p.wide && css`
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 13px;
+    padding-right: 13px;
+    padding-bottom: 13px;
+    padding-left: 13px;
   
     ${media.down.sm`
       font-size: 14px;
@@ -57,10 +55,10 @@ export const Button = styled.button`
 
 Button.propTypes = {
   primary: PropTypes.bool,
-  adaptiveWide: PropTypes.bool,
+  wide: PropTypes.bool,
 };
 
 Button.defaultProps = {
   primary: false,
-  adaptiveWide: false,
+  wide: false,
 };

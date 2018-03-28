@@ -2,13 +2,13 @@ import * as React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
-function _Icon(props) {
+const _Icon = (props) => {
   return (
     <svg className={ props.className }>
       <use xlinkHref={ '#' + props.icon.id }/>
     </svg>
   );
-}
+};
 
 export const Icon = styled(_Icon)`
   display: inline-block;
